@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/aws/aws-lambda-go/lambda"
@@ -27,5 +28,6 @@ func HandleRequest(ctx context.Context, req events.ApiGatewayProxyRequest) (even
 }
 
 func main() {
+	log.Println("App started")
 	lambda.Start(HandleRequest)
 }
